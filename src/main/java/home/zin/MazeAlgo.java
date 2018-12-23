@@ -24,7 +24,6 @@ public class MazeAlgo {
 
 
     public void getShortestPath(Queue<GridAndPath> queue) {
-
         while (!queue.isEmpty()) {
             GridAndPath polledGrid = queue.poll();
             polledGrid.grid.visited = true;
@@ -44,47 +43,8 @@ public class MazeAlgo {
                     }
                 }
             }
-
         }
     }
-
-//        if (maze.isEndingBlock(grid)){
-//            previousPath.add(grid);
-//            this.shortestPath.add(previousPath);
-//        }
-//        // if (!grid.blocked && !grid.visited){
-//        grid.visited = true;
-//        previousPath.add(grid);
-//        List<Grid> adjacents = this.maze.getAdjacent(grid);
-//        if (adjacents != null && !adjacents.isEmpty()){
-//            for (Grid g: adjacents){
-//                if (!g.visited && !g.blocked) {
-//                    getShortestPath(g, previousPath);
-//                }
-//            }
-//        }
-        // }
- //   }
-
-//    public void getShortestPath(Grid grid, List<Grid> previousPath){
-//
-//        if (maze.isEndingBlock(grid)){
-//            previousPath.add(grid);
-//            this.shortestPath.add(previousPath);
-//        }
-//       // if (!grid.blocked && !grid.visited){
-//            grid.visited = true;
-//            previousPath.add(grid);
-//            List<Grid> adjacents = this.maze.getAdjacent(grid);
-//            if (adjacents != null && !adjacents.isEmpty()){
-//                for (Grid g: adjacents){
-//                    if (!g.visited && !g.blocked) {
-//                        getShortestPath(g, previousPath);
-//                    }
-//                }
-//            }
-//       // }
-//    }
 
     public static void main(String[] args){
        // setup maze
@@ -199,9 +159,6 @@ public class MazeAlgo {
             }
             return adjacents;
         }
-
-
-
     }
 
 
