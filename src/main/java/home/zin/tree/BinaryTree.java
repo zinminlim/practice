@@ -3,9 +3,34 @@ package home.zin.tree;
 public class BinaryTree {
 
     /**
-     * Insert Binary tree node.
+     * Searching on Binary Tree.
      */
 
+    public Node search(Node root,int n){
+        if (root == null){
+            return null;
+        }
+        Node currentNode = root;
+        boolean done = false;
+        while(!done){
+            if (currentNode == null){
+                done = true;
+            } else {
+                if (currentNode.value == n) {
+                    return currentNode;
+                } else if (n < currentNode.value) {
+                    currentNode = currentNode.left;
+                } else if (n > currentNode.value) {
+                    currentNode = currentNode.right;
+                }
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Insert Binary tree node.
+     */
     public Node insertNode(Node root, int n){
         if (root == null){
             root = new Node(n,null,null);
@@ -51,10 +76,12 @@ public class BinaryTree {
         tree.insertNode(root,2);
         tree.insertNode(root,7);
         tree.insertNode(root,20);
-
-       // TreeUtils.printTree(root);
         BTreePrinter.printNode(root);
         // =============================
 
+        Node node2 = tree.search(root,2);
+        BTreePrinter.printNode(node2);
+        Node nodeNull = tree.search(root, 6);
+        BTreePrinter.printNode(nodeNull);
     }
 }
